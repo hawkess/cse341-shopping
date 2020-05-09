@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <?php
-session_start();
-include_once "config/product_list.php";
-?>
+
 
 <head>
     <meta charset="utf-8">
@@ -22,16 +19,32 @@ include_once "config/product_list.php";
 </head>
 
 <body>
+<?php
+session_start();
+include_once "config/product_list.php";
+
+echo "<div class='col-md-12'>";
+if($action=='added'){
+    echo "<div class='alert alert-info'>";
+        echo "Product was added to your cart!";
+    echo "</div>";
+}
+
+if($action=='exists'){
+    echo "<div class='alert alert-info'>";
+        echo "Product already exists in your cart!";
+    echo "</div>";
+}
+echo "</div>";
+?>
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8 mx-auto">
             <?php 
             foreach ($product_list as $product) 
               {
-                echo "
+                echo '
                 <ul class="list-group shadow">
-
-
                     <li class="list-group-item">
                         <!-- Custom content-->
                         <div class="media align-items-lg-center flex-column flex-lg-row p-3">
@@ -55,9 +68,11 @@ include_once "config/product_list.php";
                             </form>
                         </div>
                     </li>
-                </ul>
+                </ul>'
             } ?>
             </div>
         </div>
     </div>
-</body></html>
+</body>
+
+</html>
