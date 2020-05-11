@@ -99,7 +99,7 @@ include_once "objects/product.php";
                                 </ul>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <a href="/products.php" class="btn btn-block btn-dark rounded-pill py-2">Continue shopping</a>
+                                        <a href="/index.php" class="btn btn-block btn-dark rounded-pill py-2">Continue shopping</a>
                                     </div>
                                     <div class="col-sm-6">
                                         <a href="/checkout.php" class="btn btn-block btn-success rounded-pill py-2">Proceed to checkout</a>

@@ -12,9 +12,9 @@ session_start();
 
 <?php
 include_once "config/header.php";
+include_once "objects/product.php";
 include_once "config/product_list.php";
 include_once "config/updatecart.php";
-include_once "objects/product.php";
 ?>
 
 </head>
@@ -48,7 +48,7 @@ include_once "objects/product.php";
                            <input type="number" placeholder="0" name="quantity' . $product_count . '" id="product_quant_' . $product_count . '" required class="form-control form-sm w-25">
                            </div>
                            </div>
-                            <a type="button" href="#myModal" class=" trigger-btn subscribe btn btn-dark px-5 shadow-sm mx-0" data-toggle="modal" id="add_' . $id . '" onclick="addToCart(' . $product_count . ', ' . $id . ')">Add to cart</a>
+                            <a type="button" href="#myModal" class="trigger-btn subscribe btn btn-dark px-5 shadow-sm mx-0" data-toggle="modal" id="add_' . $id . '" onclick="addToCart(' . $product_count . ', ' . $id . ')">Add to cart</a>
                             </form>
                         </div>
                     </li>';
