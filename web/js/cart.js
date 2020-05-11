@@ -17,4 +17,23 @@ function addToCart(productIndex, productId) {
             console.log("Failed to send.");
         }
     });
+    
+    $("#product_quant_" + productIndex.toString()).val('');
 }
+function removeFromCart(productId) {
+    let prodid = productId.toString();
+    let query = "action=remove&id=" + prodid;
+
+    $.ajax({
+        type: "POST",
+        url: "/cart.php",
+        data: query,
+        success: function (data) {
+            location.reload();
+        },
+        error: function () {
+            console.log("Failed to send.");
+        }
+    });
+}
+

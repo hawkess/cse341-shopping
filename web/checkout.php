@@ -23,15 +23,15 @@ session_start();
                     <div class="bg-white rounded-lg shadow-sm p-5">
                         <div class="tab-content">
                             <div id="nav-card" class="">
-                                <form role="form">
+                                <form role="form" id="shipping-info" method="post" action="/confirmation.php">
                                     <div class="form-group">
                                         <label for="username">Full name</label>
-                                        <input type="text" name="username" placeholder="John Doe" required class="form-control">
+                                        <input type="text" name="name" placeholder="John Doe" class="form-control" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="address">Address</label>
                                         <div class="input-group">
-                                            <input type="text" name="address" placeholder="1234 Oak Street" class="form-control" required>
+                                            <input type="text" name="street" placeholder="1234 Oak Street" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
@@ -49,11 +49,10 @@ session_start();
                                                 <input type="text" placeholder="NY" name="state" class="form-control" required>
                                             </div>
                                         </div>
-
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="zip">Zip</label>
-                                                <input type="number" placeholder="12345" name="zip" required class="form-control">
+                                                <input type="text" placeholder="12345" name="zip" required class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -61,10 +60,10 @@ session_start();
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm">Return to Shopping Cart</a>
+                                <a type="button" class="subscribe btn btn-dark btn-block rounded-pill shadow-sm" href="/cart.php">Return to Shopping Cart</a>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="subscribe btn btn-success btn-block rounded-pill shadow-sm"  action="/confirmation.php?action=confirm">Complete Purchase</button>
+                                <button type="submit" class="subscribe btn btn-success btn-block rounded-pill shadow-sm">Complete Purchase</button>
                             </div>
                         </div>
                         </form>

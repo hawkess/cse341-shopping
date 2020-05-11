@@ -19,9 +19,6 @@ include_once "objects/product.php";
 </head>
 
 <body>
-   <?php
-    print_r($_SESSION['cart']);
-    ?>
     <div class="container-fluid">
         <div class="px-4 px-lg-0">
             <div class="pb-5">
@@ -65,7 +62,7 @@ include_once "objects/product.php";
                                   </th>
                                   <td class="border-0 align-middle"><strong>S' . number_format($item->price, 2, '.', ',') . '</strong></td>
                                   <td class="border-0 align-middle"><strong>' . $q . '</strong></td>
-                                  <td class="border-0 align-middle"><a href="/cart.php?action=remove&id=' . $i . ' class="text-dark"><i class="fa fa-trash text-dark"></i></a></td>
+                                  <td class="border-0 align-middle"><a onclick="removeFromCart(' . $i . ')" class="text-dark"><i class="fa fa-trash text-dark"></i></a></td>
                                 </tr>';
                                 $total += $item->price * $q;
                             }
