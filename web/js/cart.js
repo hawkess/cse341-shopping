@@ -6,7 +6,7 @@ function addToCart(productIndex, productId) {
 
     $.ajax({
         type: "POST",
-        url: "/products.php",
+        url: "/index.php",
         data: query,
         success: function (data) {
             if (data.code == "200") {
