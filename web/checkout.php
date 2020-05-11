@@ -1,19 +1,17 @@
+<?php
+session_name("shopping");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>CSE 341 Shopping Cart</title>
+    <title>CSE 341 Checkout</title>
 
-    <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Scripts -->
-    <script src="scripts/javascript.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<?php
+    include_once "config/header.php";
+?>
 
 </head>
 
@@ -25,15 +23,15 @@
                     <div class="bg-white rounded-lg shadow-sm p-5">
                         <div class="tab-content">
                             <div id="nav-card" class="">
-                                <form role="form" action="order.php">
+                                <form role="form">
                                     <div class="form-group">
                                         <label for="username">Full name</label>
                                         <input type="text" name="username" placeholder="John Doe" required class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="cardNumber">Address</label>
+                                        <label for="address">Address</label>
                                         <div class="input-group">
-                                            <input type="text" name="cardNumber" placeholder="1234 Oak Street" class="form-control" required>
+                                            <input type="text" name="address" placeholder="1234 Oak Street" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
@@ -48,7 +46,7 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="state">State</label>
-                                                <input type="number" placeholder="NY" name="state" class="form-control" required>
+                                                <input type="text" placeholder="NY" name="state" class="form-control" required>
                                             </div>
                                         </div>
 
@@ -63,10 +61,10 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm">Return to Shopping Cart</button>
+                                <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm">Return to Shopping Cart</a>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="subscribe btn btn-success btn-block rounded-pill shadow-sm">Complete Purchase</button>
+                                <button type="button" class="subscribe btn btn-success btn-block rounded-pill shadow-sm"  action="/confirmation.php?action=confirm">Complete Purchase</button>
                             </div>
                         </div>
                         </form>
